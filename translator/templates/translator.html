@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ganesh</title>
+    <style>
+        .result
+        {
+            padding-top: 32px;
+            text-align:left;
+            padding-left:491px;
+        }
+       
+        div
+        {
+            text-align: center;
+        }
+        #trans
+        {
+            margin-left: 137px;
+            border-radius:2em;
+            height: 30px;
+            border-style: dotted;
+        }
+        button{
+            margin-left: 12px;
+            height: 38px;
+            width: 91px;
+            border-radius: 2em;
+            border: none;
+        }
+        button:hover
+        {
+            background-color: #FFFAF0;
+        }
+        p
+    {
+            
+            color: darkblue;
+             margin: 5px;
+        }
+        body
+        {
+            font-family: monospace;
+        }
+        img
+        {
+            height: 300px;
+            margin-bottom: -47px;
+        }
+        input
+        {
+            text-align: center;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="/static/LI Google Translate.jpg">
+        <form action="/translate" method="POST">
+            <input type="text" name="text" id="trans" size="80" autocomplete='off'> <button type="submit"> Translate </button>
+        </form>
+    <div class="result">
+    {%if data:%}
+        {%for x in data:%}
+            <p><span style="color:blue;font-size: 20px;">{{x}}</span>&nbsp;:&nbsp;<span style="font-size:20px;">{{data[x]}}</span></p>
+        {%endfor%}
+    {%endif%}
+    </div>
+    </div>
+</body>
+</html>
